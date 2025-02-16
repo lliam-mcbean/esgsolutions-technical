@@ -9,8 +9,9 @@ export default defineConfig({
   },
 
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    e2e: {
+      baseUrl: 'http://localhost:5173', // Base URL for your app
+      supportFile: false, // Disable support file if not needed
     },
   },
 });
