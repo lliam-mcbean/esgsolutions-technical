@@ -2,7 +2,17 @@ import React from 'react'
 import { useInfo } from '../../context/info'
 
 export default function Info() {
-    const {info, earthquakeRange, setEarthquakeRange, setDisplacementRange, displacementRange, worldOpacity, setWorldOpacity, setWorldScale, worldScale} = useInfo()
+    const {
+      info, 
+      earthquakeRange, 
+      setEarthquakeRange, 
+      setDisplacementRange, 
+      displacementRange, 
+      worldOpacity, 
+      setWorldOpacity, 
+      setWorldScale, 
+      worldScale
+    } = useInfo()
 
   return (
     <div>

@@ -6,7 +6,7 @@ import { useInfo } from '../../context/info'
 
 
 export default function World() {
-    const [map, displacement, borders] = useTexture(['/textures/earthmap.jpg', '/textures/occulantearth.jpg', '/textures/countries.png'])
+    const [map, displacement] = useTexture(['/textures/earthmap.jpg', '/textures/occulantearth.jpg'])
     const radius = 10
     const [mappedData, setMappedData] = useState([])
     const {earthquakeRange, displacementRange, worldOpacity, worldScale} = useInfo()
