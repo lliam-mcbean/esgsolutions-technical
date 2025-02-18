@@ -18,7 +18,7 @@ function App() {
           <ambientLight />
         </Canvas>
       </div>
-      <Info earthquakeRange={earthquakeRange} setEarthquakeRange={setEarthquakeRange} />
+      <Info />
     </InfoProvider>
   )
 }
