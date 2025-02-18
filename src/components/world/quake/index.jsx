@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { useInfo } from '../../../context/info';
 
 
-export default function Quake({position, location, coords, amplitude, duration = 1000}) {
+export default function Quake({position, location, coords, amplitude, duration = 1000, depth}) {
     const [hovered, setHovered] = useState(false)
     const {setInfo} = useInfo()
 
@@ -49,7 +49,8 @@ export default function Quake({position, location, coords, amplitude, duration =
             setInfo({
                 amplitude,
                 coords,
-                location
+                location,
+                depth
             })
         }}>
         <sphereGeometry args={[0.003 * amplitude]} />

@@ -9,13 +9,16 @@ export default function Info() {
     <div className='fixed top-0 right-0 p-4 bg-white opacity-80 rounded'>
       {info ? <>
         <div>
-            {`location: ${info.location}`}
+            {`Location: ${info.location}`}
         </div>
         <div>
-            {`coords: ${info.coords}`}
+            {`Coords: ${info.coords}`}
         </div>
         <div>
-            {`amplitude: ${info.amplitude}`}
+            {`Depth: ${info.depth}km`}
+        </div>
+        <div>
+            {`Amplitude: ${info.amplitude}`}
         </div>
       </> : 'Select an earthquake site'}
     </div>

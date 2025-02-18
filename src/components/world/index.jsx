@@ -23,7 +23,7 @@ export default function World() {
 
         if (el["ML"] > earthquakeRange) {
           return (
-            <Quake key={`earthquake-${i}`} position={[x,y,z]} location={el['Location']} amplitude={el["ML"]} coords={[el["Latitude"], el["Longitude"]]}/>
+            <Quake key={`earthquake-${i}`} position={[x,y,z]} location={el['Location']} depth={el["Depth_km"]} amplitude={el["ML"]} coords={[el["Latitude"], el["Longitude"]]}/>
         )
         }
   }))
