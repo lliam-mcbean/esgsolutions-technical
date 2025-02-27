@@ -11,6 +11,10 @@ export default function Quake({position, location, coords, amplitude, duration =
 
     const meshRef = useRef(null);
     const [startTime, setStartTime] = useState(null);
+
+    function clamp(value, min, max) {
+        return Math.max(min, Math.min(value, max));
+      }
   
     useFrame(() => {
       if (!meshRef.current || startTime === null) return;
@@ -21,10 +25,18 @@ export default function Quake({position, location, coords, amplitude, duration =
         meshRef.current.scale.set(1, 1, 1);
         return;
       }
+
+      console.log(clamp(elapsed * 0.001, 0, 1))
   
-      const scaleFactor = 1 + 0.5 * Math.sin((elapsed / duration) * Math.PI * 2);
+      const scaleFactor = 1 + (0.5 * 1/clamp(elapsed * 0.001, 0.2, 1)) * Math.sin(elapsed * 0.01);
       meshRef.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
     });
+
+    useEffect(() => {
+        if (meshRef.current) {
+          meshRef.current.userData.testid = "r3f-sphere"
+        }
+    }, [meshRef.current]);
 
 
     useEffect(() => {

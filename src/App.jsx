@@ -9,7 +9,12 @@ function App() {
   return (
     <InfoProvider>
       <div className='w-screen h-screen'>
-        <Canvas camera={{position: [-0.5265 * 12, 0.8083 * 12, -0.2634 * 12]}}>
+        <Canvas 
+          onCreated={({ gl, scene }) => {
+            window.scene = scene;
+          }}
+          camera={{position: [-0.5265 * 12, 0.8083 * 12, -0.2634 * 12]}}
+        >
           <World />
           <ambientLight />
         </Canvas>

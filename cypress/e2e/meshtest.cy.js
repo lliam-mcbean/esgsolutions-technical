@@ -11,6 +11,16 @@ describe("React Three Fiber Scene", () => {
         .click(400, 300) 
         .then(() => {
             cy.get('@consoleLog').should('be.calledWith', 'Clicked!');
+            cy.window().then((win) => {
+                let foundObject;
+                win.scene.traverse((child) => {
+                    if (child.userData && child.userData.testid === "r3f-sphere") {
+                        foundObject = child;
+                    }
+                });
+                console.log('Found object:', foundObject);
+                expect(foundObject).to.exist;
+              });
         });
     });
   });

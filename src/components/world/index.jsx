@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import data from '../../data/earthquakes.json'
 import { OrbitControls, useTexture } from '@react-three/drei'
 import Quake from './quake'
@@ -8,6 +8,7 @@ import { useInfo } from '../../context/info'
 export default function World() {
     const [map, displacement] = useTexture(['/textures/earthmap.jpg', '/textures/occulantearth.jpg'])
     const radius = 10
+    const meshRef = useRef()
     const [mappedData, setMappedData] = useState([])
     const {earthquakeRange, displacementRange, worldOpacity, worldScale} = useInfo()
 
